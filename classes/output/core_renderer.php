@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-class theme_efape_ava_core_renderer  extends core_renderer
+class theme_efape_ava_v2_core_renderer  extends core_renderer
 {
 
     /**

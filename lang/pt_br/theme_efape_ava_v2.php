@@ -17,7 +17,7 @@
 /**
  * Plugin strings are defined here.
  *
- * @package     theme_efape_ava
+ * @package     theme_efape_ava_v2
  * @category    string
  * @copyright   2021 FCAV
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -25,10 +25,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['choosereadme'] = 'O tema EFAPE AVA é um tema filho do Boost.';
-$string['configtitle'] = 'Configurações do EFAPE AVA';
+$string['choosereadme'] = 'O tema EFAPE AVA V2 é um tema filho do Boost.';
+$string['configtitle'] = 'Configurações do EFAPE AVA V2';
 $string['generalsettings'] = 'Configurações gerais';
-$string['pluginname'] = 'EFAPE AVA';
+$string['pluginname'] = 'EFAPE AVA V2';
 $string['presetfiles'] = 'Arquivos adicionais de predefinições de tema';
 $string['presetfiles_desc'] = 'Arquivos de predefinições podem ser usados ​​para alterar drasticamente a aparência do tema.';
 $string['preset'] = 'Tema predefinido';

@@ -15,16 +15,16 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * The configuration for theme_efape_ava is defined here.
+ * The configuration for theme_efape_ava_v2 is defined here.
  *
- * @package     theme_efape_ava
+ * @package     theme_efape_ava_v2
  * @copyright   2021 FCAV
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$THEME->name = 'efape_ava';
+$THEME->name = 'efape_ava_v2';
 $THEME->sheets = ['fonts','footer'];
 $THEME->editor_sheets = [];
 $THEME->parents = ['boost'];
@@ -34,7 +34,7 @@ $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->requiredblocks = '';
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 $THEME->scss = function ($theme) {
-    return theme_efape_ava_get_main_scss_content($theme);
+    return theme_efape_ava_v2_get_main_scss_content($theme);
 };
 
 $THEME->larrow = '❮';

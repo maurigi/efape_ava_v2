@@ -15,22 +15,22 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * The configuration for theme_efape_ava is defined here.
+ * The configuration for theme_efape_ava_v2 is defined here.
  *
- * @package     theme_efape_ava
+ * @package     theme_efape_ava_v2
  * @copyright   2021 FCAV
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-function theme_efape_ava_get_main_scss_content($theme)
+function theme_efape_ava_v2_get_main_scss_content($theme)
 {
     global $CFG;
 
     $scss = '';
-    $scss .= file_get_contents($CFG->dirroot . '/theme/efape_ava/scss/pre.scss');
-    $scss .= file_get_contents($CFG->dirroot . '/theme/efape_ava/scss/post.scss');
+    $scss .= file_get_contents($CFG->dirroot . '/theme/efape_ava_v2/scss/pre.scss');
+    $scss .= file_get_contents($CFG->dirroot . '/theme/efape_ava_v2/scss/post.scss');
 
     return $scss;
 }

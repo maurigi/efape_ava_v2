@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-class theme_efape_ava_format_topics_renderer extends format_topics_renderer
+class theme_efape_ava_v2_format_topics_renderer extends format_topics_renderer
 {
 
     /**

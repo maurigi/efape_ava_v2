@@ -1,4 +1,4 @@
-# EFAPE AVA #
+# EFAPE AVA V2 #
 
 TODO Describe the plugin shortly here.
 

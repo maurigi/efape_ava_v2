@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-class theme_efape_ava_local_mail_renderer extends local_mail_renderer
+class theme_efape_ava_v2_local_mail_renderer extends local_mail_renderer
 {
     private function custom_image_url($imagename, $component = 'moodle')
     {

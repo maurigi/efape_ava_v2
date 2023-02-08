@@ -48,7 +48,7 @@
         "hasregionmainsettingsmenu": false
     }
 }}
-{{> theme_efape_ava/head }}
+{{> theme_efape_ava_v2/head }}
 
 <body {{{ bodyattributes }}}>
 {{> core/local/toast/wrapper}}
@@ -57,8 +57,8 @@
 
     {{{ output.standard_top_of_body_html }}}
 
-    {{> theme_efape_ava/navbar }}
-    {{> theme_efape_ava/nav-drawer }}
+    {{> theme_efape_ava_v2/navbar }}
+    {{> theme_efape_ava_v2/nav-drawer }}
 
     <div id="page" class="container-fluid d-print-block">
         {{{ output.full_header }}}
@@ -90,7 +90,7 @@
 
         {{{ output.activity_navigation }}}
         <div class="contact">
-            <div class="contact__text">{{#str}} contact, theme_efape_ava {{/str}}</div>
+            <div class="contact__text">{{#str}} contact, theme_efape_ava_v2 {{/str}}</div>
             <div class="contact__logo">
                 <a href="http://www.saopaulo.sp.gov.br/orgaos-e-entidades/secretarias/educacao/" target="_blank" rel="external"> Governo do Estado de São Paulo </a>
             </div>
@@ -99,7 +99,7 @@
     </div>
     {{{ output.standard_after_main_region_html }}}
 
-    {{> theme_efape_ava/footer }}
+    {{> theme_efape_ava_v2/footer }}
 </div>
 
 </body>
@@ -116,7 +116,7 @@ require(['theme_boost/drawer'], function(drawer) {
     M.util.js_complete('theme_boost/drawer');
 });
 
-require(['theme_efape_ava/resource'], function(mod) {
+require(['theme_efape_ava_v2/resource'], function(mod) {
     mod.init();
 });
 {{/js}}

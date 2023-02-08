@@ -112,14 +112,14 @@
         </div>
         {{/error}}
 
-        <form class="row no-gutters" action="{{loginurl}}" method="post" id="login" aria-label="{{#str}}loginform, theme_efape_ava{{/str}}">
+        <form class="row no-gutters" action="{{loginurl}}" method="post" id="login" aria-label="{{#str}}loginform, theme_efape_ava_v2{{/str}}">
             <input id="anchor" type="hidden" name="anchor" value="">
             <script>document.getElementById('anchor').value = location.hash;</script>
             <input type="hidden" name="logintoken" value="{{logintoken}}">
             <div class="form-group col-6 pr-1 mb-2">
                 <label for="username" class="">
                     {{^canloginbyemail}}
-                        {{#str}} username, theme_efape_ava {{/str}}
+                        {{#str}} username, theme_efape_ava_v2 {{/str}}
                     {{/canloginbyemail}}
                     {{#canloginbyemail}}
                         {{#str}} usernameemail {{/str}}
@@ -145,11 +145,11 @@
                 </div>
             {{/rememberusername}}
 
-            <button type="submit" class="btn btn-primary btn-block" id="loginbtn">{{#str}}login, theme_efape_ava{{/str}}</button>
+            <button type="submit" class="btn btn-primary btn-block" id="loginbtn">{{#str}}login, theme_efape_ava_v2{{/str}}</button>
         </form>
 
         <div class="forgetpass my-2">
-            <p><a class="text-white" href="{{forgotpasswordurl}}">{{#str}}forgotten, theme_efape_ava{{/str}}</a></p>
+            <p><a class="text-white" href="{{forgotpasswordurl}}">{{#str}}forgotten, theme_efape_ava_v2{{/str}}</a></p>
         </div>
 
         <div class="d-none">

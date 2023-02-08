@@ -15,16 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * A two column layout for the EFAPE AVA theme.
+ * A two column layout for the EFAPE AVA V2 theme.
  *
- * @package   theme_efape_ava
+ * @package   theme_efape_ava_v2
  * @copyright 2021 FCAV
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$PAGE->requires->js_call_amd('theme_efape_ava/efape', 'init');
+$PAGE->requires->js_call_amd('theme_efape_ava_v2/efape', 'init');
 
 user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
 require_once($CFG->libdir . '/behat/lib.php');
@@ -88,4 +88,4 @@ $templatecontext = [
 $nav = $PAGE->flatnav;
 $templatecontext['flatnavigation'] = $nav;
 $templatecontext['firstcollectionlabel'] = $nav->get_collectionlabel();
-echo $OUTPUT->render_from_template('theme_efape_ava/columns2', $templatecontext);
+echo $OUTPUT->render_from_template('theme_efape_ava_v2/columns2', $templatecontext);

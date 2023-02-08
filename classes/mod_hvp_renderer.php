@@ -25,12 +25,12 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Class theme_efape_ava_mod_hvp_renderer
+ * Class theme_efape_ava_v2_mod_hvp_renderer
  *
  * Extends the H5P renderer so that we are able to override the relevant
  * functions declared there
  */
-class theme_efape_ava_mod_hvp_renderer extends mod_hvp_renderer
+class theme_efape_ava_v2_mod_hvp_renderer extends mod_hvp_renderer
 {
 
     /**

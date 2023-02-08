@@ -17,7 +17,7 @@
 /**
  * Plugin administration pages are defined here.
  *
- * @package     theme_efape_ava
+ * @package     theme_efape_ava_v2
  * @category    admin
  * @copyright   2021 FCAV
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -27,15 +27,15 @@ defined('MOODLE_INTERNAL') || die();
 
 if ($ADMIN->fulltree) {
 
-    $settings = new theme_boost_admin_settingspage_tabs('themesettingefape_ava', get_string('configtitle', 'theme_efape_ava'));
+    $settings = new theme_boost_admin_settingspage_tabs('themesettingefape_ava_v2', get_string('configtitle', 'theme_efape_ava_v2'));
 
-    $page = new admin_settingpage('theme_efape_ava_general', get_string('generalsettings', 'theme_efape_ava'));
+    $page = new admin_settingpage('theme_efape_ava_v2_general', get_string('generalsettings', 'theme_efape_ava_v2'));
 
     // Raw SCSS to include before the content.                                                                                      
     $setting = new admin_setting_configtextarea(
-        'theme_efape_ava/scsspre',
-        get_string('rawscsspre', 'theme_efape_ava'),
-        get_string('rawscsspre_desc', 'theme_efape_ava'),
+        'theme_efape_ava_v2/scsspre',
+        get_string('rawscsspre', 'theme_efape_ava_v2'),
+        get_string('rawscsspre_desc', 'theme_efape_ava_v2'),
         '',
         PARAM_RAW
     );
@@ -44,9 +44,9 @@ if ($ADMIN->fulltree) {
 
     // Raw SCSS to include after the content.                                                                                       
     $setting = new admin_setting_configtextarea(
-        'theme_efape_ava/scss',
-        get_string('rawscss', 'theme_efape_ava'),
-        get_string('rawscss_desc', 'theme_efape_ava'),
+        'theme_efape_ava_v2/scss',
+        get_string('rawscss', 'theme_efape_ava_v2'),
+        get_string('rawscss_desc', 'theme_efape_ava_v2'),
         '',
         PARAM_RAW
     );

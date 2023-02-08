@@ -17,7 +17,7 @@
 /**
  * Plugin strings are defined here.
  *
- * @package     theme_efape_ava
+ * @package     theme_efape_ava_v2
  * @category    string
  * @copyright   2021 FCAV
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -25,10 +25,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['choosereadme'] = 'Theme EFAPE AVA is a child theme of Boost.';
-$string['configtitle'] = 'EFAPE AVA settings';
+$string['choosereadme'] = 'Theme EFAPE AVA V2 is a child theme of Boost.';
+$string['configtitle'] = 'EFAPE AVA V2 settings';
 $string['generalsettings'] = 'General settings';
-$string['pluginname'] = 'EFAPE AVA';
+$string['pluginname'] = 'EFAPE AVA V2';
 $string['presetfiles'] = 'Additional theme preset files';
 $string['presetfiles_desc'] = 'Preset files can be used to dramatically alter the appearance of the theme. See <a href=https://docs.moodle.org/dev/Boost_Presets>Boost presets</a> for information on creating and sharing your own preset files, and see the <a href=http://moodle.net/boost>Presets repository</a> for presets that others have shared.';
 $string['preset'] = 'Theme preset';

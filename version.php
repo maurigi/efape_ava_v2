@@ -17,13 +17,13 @@
 /**
  * Plugin version and other meta-data are defined here.
  *
- * @package     theme_efape_ava
+ * @package     theme_efape_ava_v2
  * @copyright   2021 FCAV
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'theme_efape_ava';
+$plugin->component = 'theme_efape_ava_v2';
 $plugin->version = 20221031000;
 $plugin->requires = 2019051100;

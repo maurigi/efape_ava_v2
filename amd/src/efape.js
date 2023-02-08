@@ -15,7 +15,7 @@
 
 /**
  *
- * @package     theme_efape_ava
+ * @package     theme_efape_ava_v2
  * @copyright   2021 FCAV
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
