@@ -1,0 +1,10 @@
+{{!
+    @template theme_boost/nav-drawer
+
+
+    Example context (json): {}
+}}
+<div id="nav-drawer" data-region="drawer" class="d-print-none moodle-has-zindex {{^navdraweropen}}closed{{/navdraweropen}}" aria-hidden="{{#navdraweropen}}false{{/navdraweropen}}{{^navdraweropen}}true{{/navdraweropen}}" tabindex="-1">
+    <a class="banner-ava bg-tertiary" href="{{{ config.wwwroot }}}" aria-hidden="true"><div>{{#str}} ava, theme_efape_ava {{/str}}</div></a>
+    {{> theme_boost/flat_navigation }}
+</div>

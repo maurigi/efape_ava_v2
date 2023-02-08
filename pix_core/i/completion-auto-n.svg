@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Camada_1"
+	xmlns:svgjs="http://svgjs.com/svgjs"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+	<style type="text/css">
+	.st0{fill:transparent;}
+	</style>
+	<path class="st0" d="M487.5,512h-463C11,512,0,501,0,487.5v-463C0,11,11,0,24.5,0h463C501,0,512,11,512,24.5v463
+	C512,501,501,512,487.5,512z"/>
+</svg>

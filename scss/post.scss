@@ -1,0 +1,1454 @@
+// Import fontawesome.
+@import "fontawesome";
+
+// Import all of bootstrap
+@import "bootstrap";
+
+// Import core moodle css
+@import "moodle";
+
+// accessible focus styling for links, add .aalink to links with custom css classes to get
+// accessible focus styles.
+.aalink,
+#page-footer a:not([class]),
+.arrow_link,
+a:not([class]),
+.activityinstance > a {
+    &.focus,
+    &:focus {
+        outline: $btn-focus-width solid transparent;
+        color: $gray-900;
+        background-color: lighten($gray-600, 50%);
+        box-shadow: 0 -#{$btn-focus-width} lighten($gray-600, 50%),
+            0 $btn-focus-width $gray-800;
+    }
+
+    &:focus:hover {
+        text-decoration: none;
+    }
+}
+
+// preset css
+
+.btn {
+    border-radius: 20px;
+}
+
+div.mdl-align {
+    min-height: auto;
+}
+
+.singlebutton {
+    margin: 1px;
+}
+
+// Navbar
+.navbar {
+    padding-left: 0.2rem;
+    height: $navbar-height;
+
+    &-expand .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .navbar-brand {
+        @include text-hide();
+        width: 46vw;
+        max-width: 251px;
+        height: 44px;
+        background-image: url([[pix:theme|logo-efape-branco]]);
+        background-size: contain;
+        background-position: left center;
+        background-repeat: no-repeat;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        + .navbar-nav {
+            display: none !important;
+        }
+    }
+
+    .usermenu {
+        font-family: "Montserrat", sans-serif;
+
+        .userbutton {
+            margin-top: 0.1rem;
+            display: inline-block;
+        }
+
+        img.userpicture {
+            border-radius: 20px;
+            width: 25px;
+            height: 25px;
+            margin-right: 0;
+            margin-left: 0.3rem;
+        }
+
+        .dropdown-menu {
+            .icon {
+                color: #fff !important;
+            }
+
+            .dropdown-divider {
+                margin: 0.2rem 0.5rem;
+            }
+
+            .fa-tachometer {
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url([[pix:theme|ico-home-w]]);
+
+                &:before {
+                    content: "";
+                }
+            }
+        }
+
+        .login {
+            font-size: 0;
+            line-height: 1;
+
+            @include media-breakpoint-up(sm) {
+                font-size: 1rem;
+            }
+
+            a {
+                font-size: 1rem;
+                color: #fff;
+
+                &:hover,
+                &:focus {
+                    color: $primary;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        padding-left: 1rem;
+        max-height: $navbar-height-desktop;
+        height: $navbar-height-desktop;
+
+        .navbar-brand {
+            height: 66px;
+        }
+
+        button[data-action="toggle-drawer"] .icon {
+            font-size: 28px;
+            width: 28px;
+        }
+    }
+
+}
+
+// Drawer
+#nav-drawer {
+    padding: 20px 10px;
+    background-color: $light;
+    overflow-x: hidden;
+
+    @include media-breakpoint-up(sm) {
+        top: $navbar-height-desktop;
+        height: calc(100% - #{$navbar-height-desktop});
+    }
+
+    i.icon:before {
+        color: #9da1a8;
+    }
+
+    .banner-ava {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 25%;
+        font-size: 1.125rem;
+        background-image: url([[pix:theme|bg-dashboard-drawer]]);
+        background-size: cover;
+        width: calc(100% - -20px);
+        height: 110px;
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        top: -20px;
+        left: -10px;
+    }
+
+    .list-group {
+        border: 1px solid #bdbcbc;
+        background-color: #fff;
+        padding: 0.5rem 1rem;
+
+        .list-group-item {
+            font-size: 1rem;
+            font-family: "Montserrat", sans-serif;
+            border-left: none;
+            border-right: none;
+            color: $dark;
+            padding: 0.75rem 0.4rem;
+        }
+
+        .list-group-item.active {
+            background-color: transparent;
+            border-color: #bdbcbc;
+
+            .media-body {
+                font-weight: 600 !important;
+            }
+        }
+
+        .list-group-item-action {
+            &:hover,
+            &:focus {
+                opacity: 1;
+                background-color: #f8f9fa;
+            }
+        }
+
+        ul li:first-child .list-group-item {
+            border-top: none;
+        }
+
+        ul li:last-child .list-group-item {
+            border-bottom: none;
+        }
+
+        .fa-tachometer {
+            margin-top: 2px;
+            height: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url([[pix:theme|ico-home]]);
+
+            &:before {
+                content: "";
+            }
+        }
+
+        .fa-sitemap {
+            margin-top: 2px;
+            height: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url([[pix:theme|ico-estrutura]]);
+
+            &:before {
+                content: "";
+            }
+        }
+
+        .fa-info {
+            margin-top: 2px;
+            height: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url([[pix:theme|ico-info]]);
+
+            &:before {
+                content: "";
+            }
+        }
+
+        .fa-calendar-o {
+            margin-top: 2px;
+            height: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url([[pix:theme|ico-calendar]]);
+
+            &:before {
+                content: "";
+            }
+        }
+    }
+}
+
+[data-region="right-hand-drawer"].drawer {
+    @include media-breakpoint-up(sm) {
+        top: $navbar-height-desktop;
+        height: calc(100% - #{$navbar-height-desktop});
+    }
+}
+
+// Page
+#page-wrapper {
+    i.icon:before {
+        font-family: "Fontawesome" !important;
+    }
+
+    #page {
+        .page-context-header {
+            padding: 0;
+        }
+
+        @include media-breakpoint-up(sm) {
+            margin-top: $navbar-height-desktop;
+        }
+    }
+
+    .context-header-settings-menu .dropdown-toggle,
+    #region-main-settings-menu .dropdown-toggle {
+        color: #7a7676 !important;
+    }
+
+    .activity-navigation {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+}
+
+// Page header
+#page-header {
+    .card {
+        border: none;
+    }
+
+    .card-body {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+
+        > div:first-of-type {
+            -webkit-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+            order: 2;
+        }
+
+        > div:nth-of-type(2) {
+            background-color: #efeae8;
+        }
+    }
+
+    #page-navbar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    > div:first-child {
+        background-color: #fff;
+    }
+
+    .breadcrumb {
+        font-family: "Montserrat", sans-serif;
+        background-color: transparent;
+        border: none !important;
+        padding-bottom: 0;
+        margin: 0;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb-item {
+            padding-top: 0;
+            padding-bottom: 0;
+
+            &:nth-of-type(2) {
+                display: none;
+            }
+
+            @include media-breakpoint-down(md) {
+                &:not(:nth-of-type(1)):not(:nth-of-type(3)) {
+                    display: none;
+                }
+            }
+        }
+
+        a {
+            color: #000;
+        }
+    }
+
+    .context-header-settings-menu .action-menu {
+        padding-right: 30px;
+    }
+}
+
+// Login page
+#page-login-index {
+    font-weight: 300;
+
+    #page-wrapper #page {
+        margin-top: 0;
+
+        @include media-breakpoint-up(md) {
+            background-image: url([[pix:theme|bg-listras]]);
+            background-repeat: no-repeat;
+            background-position: right -25px;
+        }
+    }
+
+    #page-header {
+        max-width: 890px;
+        font-weight: 300;
+        @include rfs(16px);
+        line-height: 1.7;
+        color: #5f727f;
+
+        @include media-breakpoint-up(md) {
+            @include rfs(18px);
+        }
+
+        > div:first-child {
+            background-color: transparent;
+        }
+
+        .logo_efape {
+            @include text-hide();
+            margin: 20px auto 50px;
+            width: 260px;
+            height: 76px;
+            background-image: url([[pix:theme|logo-efape]]);
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: block;
+
+            @include media-breakpoint-up(md) {
+                width: 290px;
+            }
+
+        }
+
+        h1 {
+            @include rfs(16px);
+            color: $primary;
+            font-weight: 700;
+        }
+
+        h2 {
+            @include rfs(35px);
+            line-height: 1.3;
+            max-width: 400px;
+            color: #000;
+        }
+    }
+
+    #page #page-content {
+        flex: 0 0 auto !important;
+    }
+
+    #region-main-box {
+        max-width: 920px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    label {
+        font-family: "Montserrat", sans-serif;
+        @include rfs(14px);
+        text-transform: uppercase;
+        text-align: center;
+        display: block;
+    }
+
+    input[name="username"],
+    input[name="password"],
+    #loginbtn {
+        height: 40px;
+        border: 1px;
+
+        @include media-breakpoint-up(md) {
+            height: 55px;
+        }
+    }
+
+    #loginbtn {
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 0;
+    }
+
+    .instructions {
+        @include rfs(14px);
+    }
+
+    .modal-dialog {
+        color: #000;
+    }
+}
+
+// dashboard
+#page-my-index {
+    #page {
+        background-color: #fff;
+    }
+
+    #region-main-box {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    #page-header {
+        div {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+    }
+
+    #region-main {
+        border: none;
+
+        .block {
+            border: none;
+
+            ~ .block {
+                @include media-breakpoint-up(md) {
+                    padding: 0 8%;
+                }
+
+                .card-title {
+                    background-color: #034da2 !important;
+                    color: #fff;
+                    border-radius: 2rem;
+                    font-size: 0.9375rem;
+                    font-weight: 300;
+                    text-transform: uppercase;
+                    // padding: .4rem 1rem;
+                    // width: 100%;
+                    display: inline-block !important;
+
+                    @include media-breakpoint-up(md) {
+                        font-size: 1.25rem;
+                        padding: 0.9rem 2rem;
+                    }
+                }
+            }
+        }
+
+        .btn-outline-secondary.dropdown-toggle {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .dropdown-menu {
+            border-radius: 10px;
+            padding: 0.5rem;
+            border: none;
+            box-shadow: 1px 1px 5px 1px rgb(174 175 175 / 30%);
+
+            .dropdown-item {
+                color: #9a9696;
+                font-weight: 500;
+                text-transform: uppercase;
+                font-family: "Montserrat", sans-serif;
+                font-size: 0.75rem;
+                padding: 0.5rem 1rem !important;
+
+                &:hover,
+                &:focus {
+                    color: #333;
+                }
+            }
+
+            .dropdown-item.active {
+                color: #fff;
+                border-radius: 20px;
+            }
+
+            .dropdown-divider {
+                border-top: 2px solid #e9ecef;
+            }
+        }
+    }
+
+    #block-region-content .block_html {
+        background-color: #e4e8ec !important;
+
+        @include media-breakpoint-up(lg) {
+            background-image: url([[pix:theme|bg-dashboard]]);
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            min-height: 250px;
+            padding: 0 310px 0 8%;
+            font-size: 1.125rem;
+            margin-bottom: 0 !important;
+        }
+
+        .card-title {
+            @include sr-only();
+        }
+
+        .card-body {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+}
+
+// My Overview
+.block_myoverview {
+    border: none;
+
+    .card-title {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+
+        @include media-breakpoint-down(sm) {
+            position: absolute;
+        }
+    }
+
+    .card-text {
+        margin-top: 0 !important;
+    }
+
+    [data-region="filter"] {
+        margin-bottom: 1.5rem;
+    }
+
+    .nav-tabs {
+        background-color: #fff !important;
+        padding: 0 !important;
+    }
+
+    .nav-item {
+        margin-right: 0.3rem;
+        flex: 0 0 auto;
+
+        @include media-breakpoint-up(md) {
+            margin-right: 1rem;
+        }
+
+        .nav-link {
+            color: $secondary;
+            border: 2px solid $secondary;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 500;
+
+            &:hover,
+            &:focus {
+                background-color: $secondary;
+                color: #fff;
+            }
+
+            &.active {
+                background-color: $primary !important;
+                border-color: $primary !important;
+                color: #fff;
+            }
+
+            &[data-customfieldvalue="-1"] {
+                display: none;
+            }
+        }
+    }
+
+    // Formato card
+    .dashboard-card-deck {
+        .dashboard-card {
+            border: none;
+
+            @include media-breakpoint-up(lg) {
+                width: calc(33.33% - 30px) !important;
+            }
+
+            @media (min-width: 1367px) {
+                width: calc(25% - 30px) !important;
+            }
+        }
+
+        .dashboard-card-img {
+            border-radius: 40px 40px 0 0;
+            height: 150px !important;
+        }
+
+        .dashboard-card > div:last-child {
+            border-radius: 0 0 40px 40px;
+        }
+
+        .course-info-container,
+        .dashboard-card-footer {
+            background-color: #e4e8ec;
+        }
+
+        .categoryname {
+            border-radius: 0 20px 20px 0;
+            padding: 0.2rem 1.5rem 0.2rem 1rem;
+            position: absolute;
+            top: 140px;
+            left: 0;
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.875rem;
+
+            &.trilha {
+                background-color: #d71921;
+                color: #fff;
+            }
+
+            &.curso {
+                background-color: #034da2;
+                color: #fff;
+            }
+
+            &.percurso {
+                background-color: #232d3c;
+                color: #fff;
+            }
+
+            &.módulo {
+                background-color: #fff;
+                color: #232d3c;
+            }
+        }
+
+        .coursename {
+            font-size: 1.15rem;
+        }
+
+        .progress {
+            background-color: transparent !important;
+            border-color: #d1d1d1 !important;
+            border-radius: 5px;
+        }
+    }
+
+    // Formato lista
+    .course-listitem {
+        border-width: 0 0 2px 0;
+        padding: 1rem 0;
+
+        .categoryname {
+            color: #000;
+            font-size: 15px;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-radius: 30px;
+            padding: 2px 25px;
+            margin-bottom: 5px;
+            // min-width: 130px;
+            text-align: center;
+
+            &.trilha {
+                background-color: #d71921;
+                color: #fff;
+            }
+
+            &.curso {
+                background-color: #034da2;
+                color: #fff;
+            }
+
+            &.percurso {
+                background-color: #232d3c;
+                color: #fff;
+            }
+
+            &.módulo {
+                background-color: #fff;
+                color: #232d3c;
+                border: 1px solid #232d3c;
+            }
+        }
+
+        .coursename {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+    }
+
+    // Formato resumo
+    .course-summaryitem {
+        border-width: 0 0 1px 0 !important;
+        padding: 1rem 0;
+
+        .summaryimage {
+            height: 4.5rem;
+            width: 6rem;
+
+            @include media-breakpoint-up(sm) {
+                height: 9rem;
+                width: 12rem;
+            }
+        }
+
+        .categoryname {
+            font-size: 15px;
+            text-transform: uppercase;
+            font-weight: 500;
+            border-radius: 30px;
+            padding: 2px 25px;
+            margin-bottom: 5px;
+            text-align: center;
+            background-color: #034da2;
+            color: #fff !important;
+        }
+
+        .coursename {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+    }
+}
+
+// Linha do tempo
+.block_timeline {
+    .card-title {
+        padding: 0.4rem 1rem;
+        width: 100%;
+    }
+
+    .card-text.content {
+        margin-top: 0 !important;
+    }
+
+    [data-region="paged-content-container"] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .paged-content-page-container {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
+
+        ~ div {
+            margin-left: auto;
+
+            .btn {
+                min-width: 50px;
+            }
+
+            .dropdown-menu {
+                min-width: 6rem;
+            }
+        }
+
+        h5 {
+            font-weight: 300;
+
+            @include media-breakpoint-up(md) {
+                font-size: 1.125rem;
+            }
+        }
+
+        .icon-size-4 {
+            width: 34px;
+            background-image: url([[pix:theme|ico-timeline]]);
+            background-repeat: no-repeat;
+
+            img {
+                display: none;
+            }
+        }
+
+        .event-name-container {
+            h6.event-name {
+                font-size: 1rem;
+
+                @media (min-width: 768px) {
+                    font-size: 1.125rem;
+                }
+            }
+
+            h6,
+            small {
+                font-size: 0.9375rem;
+
+                @media (min-width: 768px) {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+// Relatório de conclusão
+td.completion-progresscell .icon {
+    filter: invert(1);
+}
+
+// Recurso página
+.format-site.path-mod-page {
+    #page-header {
+        h1 {
+            font-size: 0;
+        }
+
+        .card-body {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    #region-main {
+        border: none;
+    }
+
+    [role="main"] {
+        font-size: 1.125rem;
+        font-weight: 300;
+
+        strong {
+            font-weight: 500;
+        }
+
+        > h2 {
+            font-size: 2.1875rem;
+        }
+    }
+}
+
+// Calendário
+.path-calendar {
+    .page-context-header h1 {
+        font-size: 35px;
+    }
+
+    .card {
+        border: none;
+    }
+
+    #region-main {
+        padding-top: 0;
+    }
+
+    #region-main-settings-menu.has-blocks,
+    #region-main.has-blocks {
+        border: none;
+
+        @include media-breakpoint-up(xl) {
+            width: calc(100% - 290px);
+        }
+    }
+
+    .maincalendar {
+        .controls {
+            width: 100%;
+            margin-top: 0;
+        }
+
+        .calendarmonth {
+            width: 100%;
+        }
+
+        .calendarmonth td {
+            height: 110px;
+
+            .eventname {
+                font-size: 0.875rem;
+                margin-left: 5px;
+            }
+        }
+
+        .calendarmonth td,
+        .calendarmonth th {
+            border-style: solid;
+        }
+
+        .calendarmonth ul li .icon,
+        [data-action="filter-event-type"] > .icon {
+            display: none;
+        }
+
+        .calendar-controls {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+
+            .current {
+                font-size: 1rem;
+                width: auto;
+
+                @include media-breakpoint-up(sm) {
+                    font-size: 2.1875rem;
+                }
+            }
+
+            .btn {
+                position: relative;
+                font-size: 0;
+            }
+
+            .arrow {
+                display: none;
+            }
+
+            .arrow_text {
+                display: block;
+                font-size: 0.8125rem;
+                text-align: center;
+            }
+
+            .arrow_link:focus {
+                background-color: darken($primary, 7.5);
+                color: #fff;
+            }
+
+            .arrow_link.previous {
+                padding-right: 15px;
+                padding-left: 25px;
+                width: auto;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    background-image: url([[pix:theme|ico-seta-branca]]);
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    height: 10px;
+                    width: 17px;
+                    top: 9px;
+                    left: 5px;
+                    transform: rotate(270deg);
+                }
+            }
+
+            .arrow_link.next {
+                padding-right: 25px;
+                padding-left: 15px;
+                width: auto;
+                position: relative;
+
+                &:after {
+                    content: "";
+                    background-image: url([[pix:theme|ico-seta-branca]]);
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    height: 10px;
+                    width: 17px;
+                    top: 9px;
+                    right: 5px;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+
+    [data-region="blocks-column"] {
+        @include media-breakpoint-up(xl) {
+            width: 280px;
+            margin-top: -60px;
+        }
+
+        h5 {
+            display: none !important;
+        }
+
+        .card-body {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+    }
+
+    [data-template="core_calendar/month_mini"] {
+        background-color: #ebf2f7;
+        margin-bottom: 1rem;
+        border-radius: 30px;
+        padding: 10px;
+
+        .day {
+            font-weight: 300;
+            height: 40px;
+            line-height: 40px;
+        }
+    }
+
+    #calendarviewdropdown {
+        border: 2px solid #9a9696;
+        height: 30px;
+        font-size: 0.8125rem;
+        padding-right: 33px;
+        position: relative;
+
+        &::after {
+            content: "";
+            background-image: url([[pix:theme|ico-seta-cinza]]);
+            background-repeat: no-repeat;
+            width: 17px;
+            height: 10px;
+            position: absolute;
+            border: none;
+            transform: rotate(180deg);
+            top: 9px;
+            right: 8px;
+        }
+
+        &:hover,
+        &:focus {
+            &::after {
+                background-image: url([[pix:theme|ico-seta-branca]]);
+            }
+        }
+    }
+
+    .custom-select {
+        border-radius: 30px;
+        height: 30px;
+        padding-top: 0;
+        padding-bottom: 0;
+        border: 2px solid #9a9696;
+        text-transform: uppercase;
+        font-size: 0.8125rem;
+        margin: 0.25rem 0 !important;
+        background-image: url([[pix:theme|ico-seta-cinza]]);
+        background-size: 17px;
+        background-position: calc(100% - 10px) center;
+        background-repeat: no-repeat;
+
+        &#course {
+            max-width: 180px;
+        }
+    }
+
+    [data-action="new-event-button"] {
+        font-size: 0.8125rem;
+    }
+
+    .calendar_filters {
+        li {
+            margin-bottom: 0;
+        }
+
+        [data-action="filter-event-type"] > .icon {
+            font-size: 0;
+            width: 0;
+        }
+    }
+
+    .minicalendar h3 > a {
+        font-size: 1.25rem;
+        color: #000;
+    }
+
+    .popover-body .icon {
+        font-size: 0;
+    }
+}
+
+// Manutenção
+#page-maintenance-message {
+    background-color: #ebf2f7;
+    background-image: url([[pix:theme|bg-listras]]),
+        url([[pix:theme|bg-listras-color]]);
+    background-position: 101% calc(100% - 60px), -180px calc(100% - 60px);
+    background-repeat: no-repeat;
+
+    .card-title {
+        display: none;
+    }
+
+    #page {
+        margin-top: 0;
+
+        > div:first-child,
+        [role="main"] > h2 {
+            display: none;
+        }
+
+        #region-main,
+        .maintenance_message {
+            border: 0 !important;
+            height: 100%;
+            background-color: transparent;
+        }
+
+        [role="main"] {
+            height: 100%;
+        }
+
+        [id="maincontent"] {
+            height: auto;
+        }
+    }
+
+    #logo-efape {
+        background-image: url([[pix:theme|logo-efape]]);
+        background-repeat: no-repeat;
+        width: 464px;
+        height: 119px;
+        background-size: contain;
+        font-size: 0;
+        margin: auto;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.3rem;
+    }
+
+    @include media-breakpoint-up(md) {
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2.8125rem;
+        }
+
+        p {
+            font-size: 1.375rem;
+        }
+    }
+}
+
+// Módulo arquivo
+#page-mod-resource-view {
+    &.drawer-open-left {
+        @include media-breakpoint-up(lg) {
+            .activity-navigation {
+                width: calc(100% - 285px);
+            }
+
+            #page-navbar {
+                width: 100% !important;
+            }
+        }
+    }
+
+    #page-header {
+        > div ~ div {
+            display: none;
+        }
+    }
+
+    #page-content {
+        margin-bottom: 0 !important;
+    }
+
+    [role="main"] > h2 {
+        display: none;
+    }
+
+    #resourceobject {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100% !important;
+        height: 100% !important;
+        border: 0;
+    }
+
+    .activity-navigation,
+    #page-wrapper .contact,
+    #page-footer {
+        display: none;
+    }
+}
+
+// Módulo questionário
+.que .formulation {
+    color: #000;
+    background-color: #f6f6f6;
+    border-color: #e6e6e6;
+}
+
+.que.match .answer tr {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.que .custom-select {
+    max-width: calc(100vw - 60px) !important;
+    overflow: hidden !important;
+    white-space: pre;
+    text-overflow: ellipsis;
+    -webkit-appearance: none !important;
+    margin-left: 0 !important;
+    font-size: 0.875rem;
+}
+
+.qnbutton {
+    color: #000 !important;
+}
+
+// Módulo enquete
+.unselected {
+    color: initial;
+}
+
+// Activity Navigation
+.activity-navigation {
+    width: 100%;
+    background-color: $light;
+
+    #jump-to-activity {
+        font-size: 0.9375rem;
+    }
+
+    .float-left,
+    .float-right {
+        float: none !important;
+    }
+    a {
+        border-radius: 0;
+        white-space: nowrap !important;
+        text-overflow: ellipsis;
+        display: block;
+        overflow: hidden;
+
+        &#prev-activity-link {
+            text-align: left;
+            padding-left: 20px;
+            position: relative;
+
+            span {
+                position: absolute;
+                left: 10px;
+            }
+        }
+
+        &#next-activity-link {
+            text-align: right;
+            padding-right: 20px;
+            position: relative;
+
+            span {
+                position: absolute;
+                right: 10px;
+            }
+        }
+    }
+}
+
+// Botões de confirmação
+.confirmation-buttons .btn {
+    margin: 0.1rem;
+}
+
+// User tour
+.usermenu ~ [data-flexitour="step-background"] {
+    margin-top: 20px !important;
+}
+
+[data-flexitour="step-backdrop"] a[data-action="tool_usertours/resetpagetour"] {
+    color: #000 !important;
+}
+
+// Botão voltar para o topo
+#goto-top-link {
+    margin: 10px;
+
+    .btn {
+        width: 78px;
+        padding: 10px;
+
+        img {
+            margin-right: 0;
+        }
+    }
+}
+
+// Plugin Local Mail
+
+/* Exibe 'Novo-email' somente para moderadores */
+body:not(.has-role-4):not(.has-role-19) .mail-navbar-menu-compose-link {
+    display: none;
+}
+
+/* Oculta botão "Para" no formulário de envio de mensagem */
+#local_mail_recipients_form input[name^="to"],
+#local_mail_recipients_form input[name^="cc"] {
+    display: none;
+}
+
+.mail_list {
+    .mail_item {
+        white-space: normal !important;
+    }
+
+    .mail_users {
+        width: auto !important;
+    }
+
+    .mail_summary {
+        width: auto !important;
+        white-space: normal !important;
+    }
+
+    .mail_course {
+        display: block;
+    }
+
+    @media (max-width: 769px) {
+        .mail_item {
+            position: relative;
+            height: auto;
+        }
+
+        .mail_adv_checkbox {
+            margin: 20px 5px 20px 10px;
+        }
+
+        .mail_flags {
+            margin-top: 0;
+            right: 10px;
+        }
+
+        .mail_link {
+            margin: 0;
+            padding: 0;
+        }
+
+        .mail_users {
+            margin: 0;
+            padding: 0;
+        }
+
+        .mail_summary {
+            max-width: calc(100vw - 130px) !important;
+            margin: 0;
+            padding: 0;
+            border-bottom: none;
+        }
+
+        .mail_attached {
+            margin-top: -20px;
+            right: 40px;
+        }
+
+        .mail_date {
+            font-size: small;
+            margin-top: -55px;
+            right: 0;
+        }
+    }
+}
