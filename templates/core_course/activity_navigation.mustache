@@ -66,22 +66,19 @@
 }}
 <div class="activity-navigation">
     <div class="row">
-        <div class="col-3 col-lg-4">
-            <div>{{#prevlink}}
-                <a href="{{ prevlink.url }}" class="{{ prevlink.classes }}" id="{{ prevlink.id }}" aria-label="Voltar para: {{#prevlink.attributes}} {{value}} {{/prevlink.attributes}}"><span aria-hidden="true">❮ </span>{{#prevlink.attributes}} {{value}} {{/prevlink.attributes}}</a>
-                {{/prevlink}}
-            </div>
+        <div class="col-auto">
+            {{#prevlink}}
+            <a href="{{ prevlink.url }}" class="btn btn-default" id="{{ prevlink.id }}">Página anterior</a>
+            {{/prevlink}}
         </div>
-        <div class="col-6 col-lg-4">
-            <div class="mdl-align" aria-hidden="true">
-                {{#activitylist}}{{> core/url_select }}{{/activitylist}}
-            </div>
+        <div class="col-auto">
+            <a class="btn btn-default" href="{{url}}/course/view.php?id={{course_id}}" id="index-link">Índice do curso</a>
         </div>
-        <div class="col-3 col-lg-4">
-            <div>{{#nextlink}}
-                <a href="{{ nextlink.url }}" class="{{ nextlink.classes }}" id="{{ nextlink.id }}" aria-label="Avançar para: {{#nextlink.attributes}} {{value}} {{/nextlink.attributes}}">{{#nextlink.attributes}} {{value}} {{/nextlink.attributes}} <span aria-hidden="true"> ❯</span></a>
-                {{/nextlink}}
-            </div>
+        <div class="col-auto">
+            {{#nextlink}}
+            <a class="btn btn-default" href="{{ nextlink.url }}" id="{{ nextlink.id }}">Próxima página</a>
+            {{/nextlink}}
+            
         </div>
     </div>
 </div>

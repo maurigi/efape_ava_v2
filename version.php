@@ -25,5 +25,5 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'theme_efape_ava_v2';
-$plugin->version = 20221031000;
+$plugin->version = 20230209000;
 $plugin->requires = 2019051100;

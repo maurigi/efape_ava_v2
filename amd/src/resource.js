@@ -23,38 +23,59 @@ define(['jquery', 'core/config'], function($, config) {
 
     return {
         init: function() {
-            /**
-             * Adiciona barra de navegação de atividades, botão para o topo e rodapé nas atividades arquivo
-             */
-            function addFooter() {
-                var $resourceBody = $("#resourceobject").contents().find("body");
-                var $cssLink = $("#resourceobject").contents().find("head > link:first-of-type");
-                var font = '<link href="/theme/efape_ava/style/fonts.css" rel="stylesheet">';
-                var css = '<link href="/theme/efape_ava/style/footer.css" rel="stylesheet">';
+            $(document).ready(function() {
+                resourceobject();
+            });
 
-                if ($resourceBody.find('.activity-navigation').length == 0) {
-                    $(font).insertBefore($cssLink);
-                    $(css).insertBefore($cssLink);
-                    $('.activity-navigation a, #page-footer a').attr('target', '_parent');
-                    $('.activity-navigation').clone().appendTo($resourceBody);
-                    $('.contact').clone().appendTo($resourceBody);
-                    $('#page-footer').clone().appendTo($resourceBody);
-                    $resourceBody.find('#jump-to-activity').on('change', function() {
-                        var url = $(this).val();
-                        if (url) {
-                            window.parent.location = config.wwwroot + url;
-                        }
-                        return false;
-                    });
+            /**
+             * Verifica a página possui iframe
+             */
+            function resourceobject() {
+                if (document.getElementById('resourceobject')) {
+                    checkIframeLoaded();
                 }
             }
 
-            if ($('body').hasClass('path-mod-resource')) {
-                addFooter();
+            /**
+             * Verifica se o iframe da página já foi carregado
+             */
+            function checkIframeLoaded() {
+                // Get a handle to the iframe element
+                var iframe = document.getElementById('resourceobject');
+                var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-                $("#resourceobject").on("load", function() {
-                    addFooter();
-                });
+                switch (iframeDoc.readyState) {
+                    case "complete":
+                        window.setTimeout(addElementsCss, 100);
+                        window.setTimeout(addActivityNavigation, 250);
+                        break;
+                    default:
+                        window.setTimeout(checkIframeLoaded, 100);
+                }
+            }
+
+            /**
+             * Adiciona css
+             */
+            function addElementsCss() {
+                var $cssLink = $("#resourceobject").contents().find("head > link:first-of-type");
+                var font = '<link href="' + config.wwwroot + '/theme/efape_ava_v2/style/fonts.css" rel="stylesheet">';
+                var css = '<link href="' + config.wwwroot + '/theme/efape_ava_v2/style/footer.css" rel="stylesheet">';
+                $(font).insertBefore($cssLink);
+                $(css).insertBefore($cssLink);
+            }
+
+            /**
+             * Adiciona barra de navegação de atividades e rodapé
+             */
+            function addActivityNavigation() {
+                var $resourceBody = $("#resourceobject").contents().find("body");
+                $resourceBody.append('<div id="pre-footer"></div>');
+                var $preFooter = $("#resourceobject").contents().find("#pre-footer");
+                $('.activity-navigation a, #page-footer a').attr('target', '_parent');
+                $('.activity-navigation').clone().appendTo($preFooter);
+                $('.contact').clone().appendTo($preFooter);
+                $('#page-footer').clone().appendTo($resourceBody);
             }
         }
     };
